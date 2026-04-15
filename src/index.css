@@ -1,0 +1,233 @@
+:root {
+  --tongan-blue: #002147;
+  --tongan-gold: #C5A059;
+  --white: #ffffff;
+  --soft-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--tongan-blue);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Tongan Ngatu Pattern Overlay */
+.tongan-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C5A059' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zM0 40l20-20 20 20-20 20L0 40zm40 0l20-20 20 20-20 20-20-20z'/%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.header {
+  text-align: center;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.logo-circle {
+  background: var(--tongan-gold);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: var(--tongan-gold);
+}
+
+.sub-header {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* Flip Card Styling */
+.flip-card-container {
+  background-color: transparent;
+  width: 100%;
+  max-width: 450px;
+  height: 220px;
+  perspective: 1000px;
+  margin: 30px 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flipped { transform: rotateY(180deg); }
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid var(--tongan-gold);
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.flip-card-front {
+  background-color: var(--soft-bg);
+  color: var(--white);
+}
+
+.flip-card-back {
+  background-color: var(--tongan-gold);
+  color: var(--tongan-blue);
+  transform: rotateY(180deg);
+}
+
+.personal-message {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.signature {
+  font-weight: bold;
+  margin-top: 10px;
+  border-top: 1px solid var(--tongan-blue);
+  padding-top: 5px;
+}
+
+.tap-hint {
+  font-size: 0.75rem;
+  margin-top: 15px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.intro-text {
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  z-index: 1;
+  background: rgba(0, 33, 71, 0.7);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Book Section */
+.book-grid {
+  width: 100%;
+  max-width: 800px;
+  z-index: 1;
+}
+
+.book-card {
+  background: var(--white);
+  color: #1a1a1a;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 10px solid var(--tongan-gold);
+  transition: transform 0.2s;
+}
+
+.book-card:hover {
+  transform: scale(1.02);
+}
+
+.book-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.book-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: var(--tongan-blue);
+}
+
+.book-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.gold-icon {
+  color: var(--tongan-gold);
+}
+
+.download-btn {
+  background: var(--tongan-blue);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 60px;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.footer-credits {
+  border-top: 1px solid rgba(197, 160, 89, 0.3);
+  display: inline-block;
+  padding: 20px 40px;
+}
+
+.footer-credits p {
+  margin: 5px 0;
+  color: var(--tongan-gold);
+}
+
+@media (max-width: 600px) {
+  .book-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
